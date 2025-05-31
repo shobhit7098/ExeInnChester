@@ -51,7 +51,10 @@ const Navbar = () => {
             {/* BOOKING */}
             <div className="relative">
               <button
-                onClick={() => setBookingDropdownOpen((prev) => !prev)}
+                onClick={() => {
+                  setBookingDropdownOpen(!bookingDropdownOpen);
+                  setSearchOpen(false);
+                }}
                 className="bg-[#b8913b] text-white font-medium tracking-widest px-6 py-3 hover:bg-[#a47f2c] transition duration-300"
               >
                 BOOK A STAY
@@ -149,7 +152,10 @@ const Navbar = () => {
             )}
             <div className="relative">
               <button
-                onClick={() => setBookingDropdownOpen((prev) => !prev)}
+                onClick={() => {
+                  setBookingDropdownOpen(!bookingDropdownOpen);
+                  setSearchOpen(false);
+                }}
                 className="w-full bg-[#b8913b] text-white font-medium tracking-widest px-6 py-3 hover:bg-[#a47f2c] transition duration-300"
               >
                 BOOK A STAY

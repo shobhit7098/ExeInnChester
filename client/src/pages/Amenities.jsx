@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Image from "../assets/HomePage/lawn-bgeffect.jpg";
-import SlipperImage from "../assets/SlipperImage.jpg";
-import TestimonialImage from "../assets/TestimonialImage.png";
 import Review from "../components/Review";
+
+const Image =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/lawn-bgeffect.jpg";
+const SlipperImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/SlipperImage.jpg";
+const TestimonialImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/TestimonialImage.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";

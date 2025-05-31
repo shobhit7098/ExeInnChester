@@ -6,31 +6,56 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // Images
-import lobby1 from "../assets/Booking/Bedroom3.jpg";
-import lobby3 from "../assets/HomePage/bedroomNew.jpg";
-import lobby4 from "../assets/HomePage/bedroomNew2.jpg";
-import lobby2 from "../assets/HomePage/bedroomNew3.jpg";
-import lobby5 from "../assets/Booking/bedroom2.jpg";
-import room1 from "../assets/Booking/CoffeArea.jpg";
-import room2 from "../assets/Booking/CoffeeArea2.jpg";
-import room5 from "../assets/Booking/CoffeeArea3.jpg";
-import room3 from "../assets/Booking/CoffeeArea4.jpg";
-import room4 from "../assets/Booking/CoffeeArea5.jpg";
-import kit1 from "../assets/Booking/Room1.jpg";
-import kit2 from "../assets/Booking/Room3.jpg";
-import kit5 from "../assets/Booking/living7.jpg";
-import kit3 from "../assets/HomePage/day-poolArea.jpg";
-import kit4 from "../assets/Booking/pool.jpg";
-import rp1 from "../assets/Booking/Living.jpg";
-import rp2 from "../assets/Booking/Living3.jpg";
-import rp3 from "../assets/Booking/Living4.jpg";
-import rp5 from "../assets/Booking/living6.jpg";
-import rp from "../assets/Booking/living5.jpg";
-import con1 from "../assets/Booking/convenience.jpg";
-import con2 from "../assets/Booking/Convenience3.jpg";
-import con3 from "../assets/Booking/Convenience4.jpg";
-import con5 from "../assets/Booking/Convenience5.jpg";
-import con4 from "../assets/Booking/Conv.jpg";
+const lobby1 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Bedroom3.jpg";
+const lobby3 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/bedroomNew.jpg";
+const lobby4 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/bedroomNew2.jpg";
+const lobby2 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/bedroomNew3.jpg";
+const lobby5 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/bedroom2.jpg";
+const room1 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeArea.jpg";
+const room2 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeeArea2.jpg";
+const room5 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeeArea3.jpg";
+const room3 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeeArea4.jpg";
+const room4 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeeArea5.jpg";
+const kit1 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Room1.jpg";
+const kit2 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Room3.jpg";
+const kit5 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/living7const";
+const kit3 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/day-poolArea.jpg";
+const kit4 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/pool.jpg";
+const rp1 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Living.jpg";
+const rp2 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Living3.jpg";
+const rp3 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Living4.jpg";
+const rp5 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/living6.jpg";
+const rp =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/living5.jpg";
+const con1 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/convenience.jpg";
+const con2 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Convenience3.jpg";
+const con3 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Convenience4.jpg";
+const con5 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Convenience5.jpg";
+const con4 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Conv.jpg";
 
 const imageSet1 = [lobby1, lobby3, lobby4, lobby5, lobby2];
 const imageSet2 = [room1, room2, room3, room4, room5];

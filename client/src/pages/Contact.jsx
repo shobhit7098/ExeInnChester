@@ -9,11 +9,16 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Living from "../assets/HomePage/reception-2.jpg";
 // import lobby from "../assets/HomePage/.jpg";
-import lobby2 from "../assets/Booking/CoffeArea.jpg";
-import lobby4 from "../assets/Booking/CoffeeArea5.jpg";
-import lobby3 from "../assets/Booking/CoffeeArea2.jpg";
-import lobby from "../assets/Booking/CoffeeArea3.jpg";
-import Fotter from "../assets/Booking/footer.jpg";
+const lobby2 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeArea.jpg";
+const lobby4 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeeArea5.jpg";
+const lobby3 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeeArea2.jpg";
+const lobby =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeeArea3.jpg";
+const Fotter =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/footer.jpg";
 
 const Contact = () => {
   const images = [

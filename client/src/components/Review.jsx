@@ -263,7 +263,8 @@ export default function ReviewSection() {
                   {review.userId === currentUser.id && (
                     <div className="absolute top-2 right-2 text-right z-20">
                       <button
-                        className="text-xl px-2 py-1 rounded hover:bg-gray-200"
+                        title="Options"
+                        className="text-xl text-gray-700 px-2 py-1 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
                         onClick={() =>
                           setOpenMenuId(
                             openMenuId === review._id ? null : review._id
@@ -274,7 +275,7 @@ export default function ReviewSection() {
                       </button>
 
                       {openMenuId === review._id && (
-                        <div className="absolute right-0 mt-1 w-28 bg-white border border-gray-200 rounded-md shadow-lg">
+                        <div className="absolute right-0 mt-1 w-28 bg-white border border-gray-200 rounded-md shadow-lg z-30">
                           <button
                             onClick={() => {
                               handleEdit(review);

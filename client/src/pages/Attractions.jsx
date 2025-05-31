@@ -3,19 +3,32 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import History from "./History";
 
-import CottonHills from "../assets/Attractions/CottonHills.jpg";
-import Farmers from "../assets/Attractions/Farmers.jpg";
-import Attraction from "../assets/Attractions/Attractions.webp";
-import GolfClub from "../assets/Attractions/GolfClub.jpg";
-import Historic from "../assets/Attractions/Historic.jpg";
-import Lake from "../assets/Attractions/Lake.jpg";
-import Museum from "../assets/Attractions/Museum.jpeg";
-import Park from "../assets/Attractions/Park.jpg";
-import Rocky from "../assets/Attractions/Rocky.jpg";
-import SkyDive from "../assets/Attractions/Skydive.jpg";
-import TMuseum from "../assets/Attractions/TMuseum.jpg";
-import Trail from "../assets/Attractions/Trail.jpg";
-import YMCA from "../assets/Attractions/YMCA.jpg";
+const CottonHills =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/CottonHills.jpg";
+const Farmers =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Farmers.jpg";
+const Attraction =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Attractions.webp";
+const GolfClub =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/GolfClub.jpg";
+const Historic =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Historic.jpg";
+const Lake =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Lake.jpg";
+const Museum =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Museum.jpeg";
+const Park =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Park.jpg";
+const Rocky =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Rocky.jpg";
+const SkyDive =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Skydive.jpg";
+const TMuseum =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/TMuseum.jpg";
+const Trail =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/Trail.jpg";
+const YMCA =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Attractions/YMCA.jpg";
 export default function Attractions() {
   const attractions = [
     {

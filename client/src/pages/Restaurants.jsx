@@ -1,10 +1,7 @@
 import React from "react";
 import Footer from "../components/Footer";
-
 import Navbar from "../components/Navbar";
 import Image from "../assets/Restaurant/HeroImage.jpg";
-import tmImage from "../assets/Restaurant/T&M.jpg";
-import OKImage from "../assets/Restaurant/Our-Kitchen-Chester.jpg";
 import HongImage from "../assets/Restaurant/Hong.jpg";
 import BantamImage from "../assets/Restaurant/Bantam.jpg";
 import FishImage from "../assets/Restaurant/Fish.jpg";

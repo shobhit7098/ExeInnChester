@@ -5,62 +5,36 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
-import Front from "../assets/HomePage/front-copy.jpg";
-import FrontSecond from "../assets/HomePage/front-2.jpg";
-import FrontThird from "../assets/HomePage/night-poolArea.jpg";
-// import Vid from "../assets/HomeVideo/Vid1.mp4";
-
-import ec1 from "../assets/ec1.jpg";
-import ec2 from "../assets/ec2.jpg";
-import ec3 from "../assets/ec3.jpg";
-import ec4 from "../assets/ec4.jpg";
-import ec5 from "../assets/ec5.jpg";
-import ec6 from "../assets/ec6.jpg";
-import ec7 from "../assets/ec7.jpg";
-import ec8 from "../assets/ec8.jpg";
-import ec9 from "../assets/ec9.jpg";
-import ec10 from "../assets/ec10.jpg";
-import ec11 from "../assets/ec11.jpg";
-import ec12 from "../assets/ec12.jpg";
-import ec13 from "../assets/ec13.jpg";
-import ec14 from "../assets/ec14.jpg";
-import ec15 from "../assets/ec15.jpg";
-import ec16 from "../assets/ec16.jpg";
-import room4 from "../assets/Booking/LivingRoom2.jpg";
 
 const facilityImages = [
-  ec1,
-  ec2,
-  ec3,
-  ec4,
-  ec5,
-  ec6,
-  ec7,
-  ec8,
-  ec13,
-  ec2,
-  ec9,
-  ec5,
-  ec4,
-  ec10,
-  ec11,
-  ec12,
-  ec13,
-  ec14,
-  ec15,
-  ec16,
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec1.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec2.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec3.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec4.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec5.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec6.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec7.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec8.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec9.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec10.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec11.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec12.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec13.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec14.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec15.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec16.jpg",
 ];
 const images = [
   {
-    src: Front,
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-2.jpg",
     alt: "Close-up of striped pillows on a bed in a hotel room with soft natural light",
   },
   {
-    src: FrontSecond,
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-copy.jpg",
     alt: "Modern hotel room with a cozy ambiance and large windows",
   },
   {
-    src: FrontThird,
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/night-poolArea.jpg",
     alt: "Elegant bedroom with decorative cushions and natural light",
   },
 ];
@@ -203,7 +177,7 @@ Chester!`}
         aria-label="Customer quote"
       >
         <img
-          src={room4}
+          src="https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/LivingRoom2.jpg"
           alt="Hotel bedroom banner"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"

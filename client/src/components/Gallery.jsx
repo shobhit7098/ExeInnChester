@@ -5,15 +5,18 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone, FaFax } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "../index.css";
-// Images
-import Bedroom2 from "../assets/Booking/bedroom2.jpg";
-import room1 from "../assets/ec5.jpg";
-import Parking from "../assets/HomePage/parking.jpg";
-import ec5 from "../assets/ec5.jpg";
-import ec6 from "../assets/ec6.jpg";
-import ec7 from "../assets/ec7.jpg";
-import Front from "../assets/HomePage/front-day.jpg";
-import Parking2 from "../assets/HomePage/parking2.jpg";
+const Bedroom2 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/bedroom2.jpg";
+const room1 = "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec5.jpg";
+const Parking =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/parking.jpg";
+const ec5 = "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec5.jpg";
+const ec6 = "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec6.jpg";
+const ec7 = "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec7.jpg";
+const Front =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-day.jpg";
+const Parking2 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/parking2.jpg";
 
 const frontImages = [Front, ec5, Parking, ec6, Parking2, ec7];
 

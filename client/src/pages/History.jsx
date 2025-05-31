@@ -5,7 +5,8 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
-import Pool from "../assets/HomePage/pool-image3.jpg";
+const Pool =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/pool-image3.jpg";
 export default function () {
   const heroImg = Image;
   const cardData = [
