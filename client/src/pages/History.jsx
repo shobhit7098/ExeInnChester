@@ -1,0 +1,175 @@
+import React, { useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+} from "framer-motion";
+import Pool from "../assets/HomePage/pool-image3.jpg";
+export default function () {
+  const heroImg = Image;
+  const cardData = [
+    { id: "01", text: "Warm Service" },
+    { id: "02", text: "Comfortable Rooms" },
+    { id: "03", text: "Great Location" },
+  ];
+
+  return (
+    <>
+      <WhyChooseUs cards={cardData} heroImg={heroImg} />
+      <section className="bg-white pt-30 ">
+        <main className="max-w-6xl mx-auto px-8 py-18  font-sans">
+          <div className="flex flex-col md:flex-row md:space-x-10">
+            {/* Photo */}
+            <div className="flex-shrink-0 mb-8 md:mb-0">
+              <img
+                src="https://storage.googleapis.com/a1aa/image/6c935c1f-1a8b-47a3-b15f-13b4a9d5b732.jpg"
+                alt="Woman in hotel"
+                className="w-[300px] h-[350px] object-cover"
+                width={300}
+                height={350}
+              />
+            </div>
+            {/* Copy */}
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-18 gap-y-9 text-[17px] leading-[20px] text-gray-700">
+              <h1 className="col-span-full text-[28px] leading-[28px] text-[1a1a3d] flex items-center font-semibold">
+                <span className="inline-block w-0.5 h-8 bg-[bfa15a] mr-3" />
+                Executive Inn Chester, SC
+              </h1>
+
+              <div>
+                <p className="font-medium mb-3">Clean and tidy</p>
+                <p className="mb-4">
+                  This is the most vital characteristic that any hotel should
+                  possess. All the rooms in our hotel are clean. This includes
+                  the public rooms, the washrooms, restaurant, and the
+                  staircases. We make sure that we have adequate staff to
+                  maintain the hygiene level of the hotel. Our hotel’s furniture
+                  is also arranged in a neat and orderly manner.
+                </p>
+
+                <p className="font-medium mb-4">The staff</p>
+                <p className="mb-3">
+                  The staff are the face of a hotel because the moment a guest
+                  checks in to the time they check out, they are in contact with
+                  the staff. They are the ones who will determine the guest’s
+                  experience at the hotel. Our staff is:
+                </p>
+                <ul className="list-disc list-inside space-y-3">
+                  <li>
+                    Warm and kind; the hotel industry is all about providing
+                    services, you cannot offer a service with a bad attitude.
+                    Our staff is courteous and makes the guests feel at home.
+                  </li>
+                  <li>
+                    Offers information where necessary. Our staff offer
+                    information gladly to guests. The information may
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <p className="mb-2">
+                  be about the hotel’s surrounding or any location that the
+                  guest might want to know in the area. On top of that, the
+                  staff is well knowledgeable.
+                </p>
+
+                <p className="font-medium mb-3">Location</p>
+                <p className="mb-4">
+                  Executive Inn Chester is conveniently located. It allows you
+                  to perform your errands without having to waste too much time,
+                  effort or money. It is also located in a safe place.
+                </p>
+
+                <p className="font-medium mb-3">Customers’ needs first</p>
+                <p className="mb-4">
+                  We are all about people and service provision. We put our
+                  customer’s needs first, always have a good reputation. We
+                  provide personalized services to our guests and that is why
+                  they come back over and over again because they cannot forget
+                  the experience they had at our hotel. Our staff ensures that
+                  the guest’s needs come first.
+                </p>
+
+                <p className="font-medium mb-3">Free Wi-Fi & HBO</p>
+                <p>We provide free Wi-Fi and HBO to all our guests.</p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+    </>
+  );
+}
+
+const ParallaxCard = ({ idx, id, text, progress }) => {
+  const y = useTransform(progress, [0, 1], [0, (idx + 1) * 60]);
+  const scale = useTransform(progress, [0, 1], [1, 0.92]);
+  const opacity = useTransform(progress, [0, 0.9, 1], [1, 1, 0]);
+
+  const transform = useMotionTemplate`translateY(${y}px) scale(${scale})`;
+
+  return (
+    <motion.div
+      style={{ transform, opacity }}
+      className="bg-white/90 shadow-xl  rounded-lg p-12 w-[300px] md:w-[350px] text-center border-l-[6px] border-yellow-500 transition-transform duration-300"
+      initial={{ scale: 0.95, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      whileHover={{ scale: 1.05 }}
+    >
+      <h3 className="text-3xl font-semibold text-blue-900 mb-2">{id}</h3>
+      <p className="text-gray-700 text-sm">{text}</p>
+    </motion.div>
+  );
+};
+
+const WhyChooseUs = ({ cards, heroImg }) => {
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"], // Starts tracking once top of section hits top of viewport
+  });
+
+  const groupOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.85, 0]);
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const x = useTransform(scrollYProgress, [0, 1], [150, 0]);
+
+  return (
+    <section
+      ref={containerRef}
+      className="relative h-[400px] bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${Pool})`,
+      }}
+    >
+      {/* Fixed dark overlay */}
+      <motion.div className="absolute inset-0 bg-blue-500/40 z-0" />
+      <div className="relative z-10 flex flex-col items-center justify-center text-white text-center h-full px-4">
+        <p className="text-lg mb-1">We Are Clean & Orderly</p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-1">Why Choose Us</h2>
+        <p className="text-lg">We are the Best in Town</p>
+      </div>
+
+      {/* Cards */}
+      <motion.div
+        style={{ opacity: groupOpacity }}
+        className="absolute top-[100%] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col md:flex-row gap-10 px-4 z-10"
+      >
+        {cards?.map((card, idx) => (
+          <ParallaxCard
+            key={card.id}
+            idx={idx}
+            id={card.id}
+            text={card.text}
+            progress={scrollYProgress}
+          />
+        ))}
+      </motion.div>
+    </section>
+  );
+};

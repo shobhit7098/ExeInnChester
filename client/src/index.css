@@ -1,0 +1,43 @@
+/* src/index.css or src/styles.css */
+@import "tailwindcss";
+
+/* swiper-custom.css */
+
+.swiper-button-next,
+.swiper-button-prev {
+  @apply w-7 h-7 text-white drop-shadow;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+}
+
+/* Pagination bullets */
+.swiper-pagination-bullet {
+  background-color: #e4e436 !important;
+  /* Tailwind yellow-400 */
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #e8e8e7;
+  opacity: 1 !important;
+}
+
+.aspect-ratio-box {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.aspect-ratio-box iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
