@@ -42,7 +42,7 @@ export default function ReviewSection() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [openMenuId, setOpenMenuId] = useState(null);
 
-  const Url = "http://localhost:5000";
+  const Url = "https://exeinnchester.onrender.com";
   const reviewVideos = [
     {
       id: 1,
