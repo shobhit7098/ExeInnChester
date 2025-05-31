@@ -70,7 +70,7 @@ const FacilityShowcase = () => {
     { title: "As your own home", images: imageSet3 },
     { title: "Your experience matters", images: imageSet4 },
     {
-      title: "Float in comfort and luxury",
+      title: "Comfortable and luxurious",
       images: imageSet5,
     },
   ];

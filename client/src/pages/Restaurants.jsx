@@ -1,27 +1,49 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import Image from "../assets/Restaurant/HeroImage.jpg";
-import HongImage from "../assets/Restaurant/Hong.jpg";
-import BantamImage from "../assets/Restaurant/Bantam.jpg";
-import FishImage from "../assets/Restaurant/Fish.jpg";
-import GenesImage from "../assets/Restaurant/Gene's.jpg";
-import ItalianImage from "../assets/Restaurant/Italian-Garden.jpg";
-import LosImage from "../assets/Restaurant/Los.jpg";
-import ManhattanImage from "../assets/Restaurant/Manhattan.jpg";
-import TwistedImage from "../assets/Restaurant/Twisted.jpg";
-import UmiImage from "../assets/Restaurant/UMI.jpg";
-import GoldenImage from "../assets/Restaurant/golden.webp";
-import Front from "../assets/Restaurant/McD.webp";
-import PizzaImage from "../assets/Restaurant/pizza.webp";
-import SubImage from "../assets/Restaurant/subway.webp";
-import TacoImage from "../assets/Restaurant/Taco.webp";
-import littleImage from "../assets/Restaurant/little.webp";
-import wendyImage from "../assets/Restaurant/wendy.webp";
-import KFCImage from "../assets/Restaurant/KFC.webp";
-import ArbyImage from "../assets/Restaurant/Arbys.webp";
-import HardeeImage from "../assets/Restaurant/Hardee's.webp";
-import BojangleImage from "../assets/Restaurant/Bojangle.webp";
+
+const Image =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/HeroImage.jpg";
+const HongImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Hong.jpg";
+const BantamImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Bantam.jpg";
+const FishImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Fish.jpg";
+const GenesImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Gene's.jpg";
+const ItalianImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Italian-Garden.jpg";
+const LosImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Los.jpg";
+const ManhattanImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Manhattan.jpg";
+const TwistedImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Twisted.jpg";
+const UmiImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/UMI.jpg";
+const GoldenImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/golden.webp";
+const Front =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/McD.webp";
+const PizzaImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/pizza.webp";
+const SubImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/subway.webp";
+const TacoImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Taco.webp";
+const littleImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/little.webp";
+const wendyImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/wendy.webp";
+const KFCImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/KFC.webp";
+const ArbyImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Arbys.webp";
+const HardeeImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Hardee's.webp";
+const BojangleImage =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Bojangle.webp";
 import { Star } from "lucide-react";
 export default function Restaurants() {
   const restaurants = [

@@ -7,7 +7,8 @@ import "swiper/css/pagination";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Living from "../assets/HomePage/reception-2.jpg";
+const Living =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/reception-2.jpg";
 // import lobby from "../assets/HomePage/.jpg";
 const lobby2 =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeArea.jpg";

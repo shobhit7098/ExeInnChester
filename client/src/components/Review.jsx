@@ -34,15 +34,15 @@ export default function ReviewSection() {
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [error, setError] = useState("");
-  const [editing, setEditing] = useState(false);
-  const [editingId, setEditingId] = useState(null);
   const [loading, setLoading] = useState(false);
   const videoRefs = useRef([]);
   const swiperRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [openMenuId, setOpenMenuId] = useState(null);
 
-  const Url = "https://exeinnchester.onrender.com";
+  // const Url = "https://exeinnchester.onrender.com";
+  const Url = "http://localhost:5000";
+
   const reviewVideos = [
     {
       id: 1,
@@ -82,104 +82,22 @@ export default function ReviewSection() {
     },
   ];
 
-  const currentUser = { id: getUserId() };
-
-  const fetchReviews = async () => {
-    try {
-      // const res = await axios.get("${Url}/api/reviews");
-      const res = await axios.get(`${Url}/api/reviews`);
-      console.log("Fetched reviews:", res.data);
-      setReviews(res.data);
-    } catch (err) {
-      console.error("Error fetching reviews:", err);
-    }
-  };
-
   useEffect(() => {
     fetchReviews();
   }, []);
 
-  const handleEdit = (review) => {
-    setText(review.comment);
-    setAuthor(review.name);
-    setRating(review.rating);
-    setEditingId(review._id);
-    setEditing(true);
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`${Url}/api/reviews/${id}`, {
-        headers: { "x-user-id": currentUser.id },
-      });
-      fetchReviews();
-    } catch (err) {
-      console.error("Delete failed:", err);
-      alert("Failed to delete review.");
-    }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-
-    if (!author || !text || rating < 1) {
-      setError("All fields are required and rating must be at least 1.");
-      setLoading(false);
-      return;
-    }
-
-    try {
-      const payload = { name: author, comment: text, rating };
-      const config = { headers: { "x-user-id": currentUser.id } };
-
-      if (editing) {
-        await axios.put(`${Url}/api/reviews/${editingId}`, payload, config);
-      } else {
-        await axios.post(`${Url}/api/reviews`, payload, config);
-      }
-
-      setText("");
-      setAuthor("");
-      setRating(0);
-      setEditing(false);
-      setEditingId(null);
-      fetchReviews();
-    } catch (err) {
-      console.error("Submit failed:", err);
-      setError("Error submitting review.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    const handlePlay = (index) => {
-      setIsPlaying(true);
-      videoRefs.current.forEach((video, i) => {
-        if (i !== index && video) video.pause();
-      });
-
-      if (swiperRef.current) {
-        swiperRef.current.autoplay.stop();
-        swiperRef.current.allowSlideNext = false;
-        swiperRef.current.allowSlidePrev = false;
-      }
-    };
-
     const handlePauseOrEnd = () => {
-      setIsPlaying(false);
-      if (swiperRef.current) {
-        swiperRef.current.autoplay.start();
-        swiperRef.current.allowSlideNext = true;
-        swiperRef.current.allowSlidePrev = true;
-      }
+      swiperRef.current?.autoplay?.start();
     };
 
-    videoRefs.current.forEach((video, index) => {
+    const handlePlay = () => {
+      swiperRef.current?.autoplay?.stop();
+    };
+
+    videoRefs.current.forEach((video) => {
       if (video) {
-        video.addEventListener("play", () => handlePlay(index));
+        video.addEventListener("play", handlePlay);
         video.addEventListener("pause", handlePauseOrEnd);
         video.addEventListener("ended", handlePauseOrEnd);
       }
@@ -195,6 +113,45 @@ export default function ReviewSection() {
       });
     };
   }, []);
+
+  const fetchReviews = async () => {
+    try {
+      const res = await axios.get(`${Url}/api/reviews`);
+      setReviews(res.data);
+    } catch (err) {
+      console.error("Error fetching reviews:", err);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!text || !author || !rating) {
+      setError("Please fill all fields and give a rating.");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const payload = {
+        comment: text,
+        name: author,
+        rating,
+        userId: getUserId(),
+      };
+
+      await axios.post(`${Url}/api/reviews`, payload);
+      setText("");
+      setAuthor("");
+      setRating(0);
+      setError("");
+      fetchReviews();
+    } catch (err) {
+      console.error("Error submitting review:", err);
+      setError("Something went wrong. Try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -259,47 +216,6 @@ export default function ReviewSection() {
             {reviews.map((review) => (
               <SwiperSlide key={review._id}>
                 <div className="flex flex-col justify-center h-full text-left px-10 relative">
-                  {/* ⋮ Three Dot Menu */}
-                  {review.userId === currentUser.id && (
-                    <div className="absolute top-2 right-2 text-right z-20">
-                      <button
-                        title="Options"
-                        className="text-xl text-gray-700 px-2 py-1 rounded hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300"
-                        onClick={() =>
-                          setOpenMenuId(
-                            openMenuId === review._id ? null : review._id
-                          )
-                        }
-                      >
-                        ⋮
-                      </button>
-
-                      {openMenuId === review._id && (
-                        <div className="absolute right-0 mt-1 w-28 bg-white border border-gray-200 rounded-md shadow-lg z-30">
-                          <button
-                            onClick={() => {
-                              handleEdit(review);
-                              setOpenMenuId(null);
-                            }}
-                            className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
-                          >
-                            Edit
-                          </button>
-                          <button
-                            onClick={() => {
-                              handleDelete(review._id);
-                              setOpenMenuId(null);
-                            }}
-                            className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Review Content */}
                   <p className="text-gray-700 text-lg italic mb-3">
                     "{review.comment}"
                   </p>
@@ -319,9 +235,7 @@ export default function ReviewSection() {
 
         {/* Review Form */}
         <div className="md:w-1/3 bg-white p-6 rounded-xl shadow-md">
-          <h2 className="text-2xl font-bold mb-4">
-            {editing ? "Edit Your Review" : "Write a Review"}
-          </h2>
+          <h2 className="text-2xl font-bold mb-4">Write a Review</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
             <textarea
               value={text}
@@ -329,7 +243,6 @@ export default function ReviewSection() {
               className="w-full border border-gray-300 rounded-lg p-3"
               rows={4}
               placeholder="Write your review"
-              aria-label="Your review"
             />
             <input
               value={author}
@@ -337,9 +250,8 @@ export default function ReviewSection() {
               type="text"
               placeholder="Your name"
               className="w-full border border-gray-300 rounded-lg p-3"
-              aria-label="Your name"
             />
-            <div className="flex gap-1" aria-label="Rating">
+            <div className="flex gap-1">
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
                   type="button"
@@ -347,7 +259,6 @@ export default function ReviewSection() {
                   onClick={() => setRating(star)}
                   onMouseEnter={() => setHoverRating(star)}
                   onMouseLeave={() => setHoverRating(0)}
-                  aria-label={`Set rating to ${star}`}
                 >
                   <Star filled={star <= (hoverRating || rating)} />
                 </button>
@@ -361,11 +272,7 @@ export default function ReviewSection() {
                 loading ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
               }`}
             >
-              {loading
-                ? "Submitting..."
-                : editing
-                ? "Update Review"
-                : "Submit Review"}
+              {loading ? "Submitting..." : "Submit Review"}
             </button>
           </form>
         </div>
