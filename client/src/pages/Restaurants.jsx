@@ -7,14 +7,11 @@ import tmImage from "../assets/Restaurant/T&M.jpg";
 import OKImage from "../assets/Restaurant/Our-Kitchen-Chester.jpg";
 import HongImage from "../assets/Restaurant/Hong.jpg";
 import BantamImage from "../assets/Restaurant/Bantam.jpg";
-import CycloneImage from "../assets/Restaurant/Cyclone.jpg";
-import DianeImage from "../assets/Restaurant/Diane's.jpg";
 import FishImage from "../assets/Restaurant/Fish.jpg";
 import GenesImage from "../assets/Restaurant/Gene's.jpg";
 import ItalianImage from "../assets/Restaurant/Italian-Garden.jpg";
 import LosImage from "../assets/Restaurant/Los.jpg";
 import ManhattanImage from "../assets/Restaurant/Manhattan.jpg";
-import TaylorImage from "../assets/Restaurant/Taylor's.jpg";
 import TwistedImage from "../assets/Restaurant/Twisted.jpg";
 import UmiImage from "../assets/Restaurant/UMI.jpg";
 import GoldenImage from "../assets/Restaurant/golden.webp";
@@ -22,8 +19,6 @@ import Front from "../assets/Restaurant/McD.webp";
 import PizzaImage from "../assets/Restaurant/pizza.webp";
 import SubImage from "../assets/Restaurant/subway.webp";
 import TacoImage from "../assets/Restaurant/Taco.webp";
-import WaffleImage from "../assets/Restaurant/Waffle.webp";
-import RhinoImage from "../assets/Restaurant/Rhino's.jpg";
 import littleImage from "../assets/Restaurant/little.webp";
 import wendyImage from "../assets/Restaurant/wendy.webp";
 import KFCImage from "../assets/Restaurant/KFC.webp";
@@ -114,16 +109,7 @@ export default function Restaurants() {
       rating: 4.5,
       reviews: 68,
     },
-    // {
-    //   name: "Diane's Kitchen",
-    //   image: DianeImage,
-    //   address: "101 Ashford St, Chester, SC 29706",
-    //   phone: "(803) 377-8414",
-    //   mapLink:
-    //     "https://www.google.com/search?rlz=1C1CHBF_enUS878US878&ei=Ei30XcegMevn5gKWm6mgDg&q=Diane%27s+Kitchen+chester+sc&oq=Diane%27s+Kitchen+chester+sc&gs_l=psy-ab.12..0.167120.167120..169131...0.1..0.84.84.1......0....2j1..gws-wiz.......0i71.SA5HUOPVApQ&ved=0ahUKEwjH8ZCm8bPmAhXrs1kKHZZNCuQQ4dUDCAs",
-    //   rating: 4.6,
-    //   reviews: 87,
-    // },
+
     {
       name: "Manhattan Lounge",
       image: ManhattanImage,
@@ -187,7 +173,8 @@ export default function Restaurants() {
     },
     {
       name: "Waffle House",
-      image: WaffleImage,
+      image:
+        "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/waffle.webp",
       address: "1607 J A Cochran,SC-72, Chester, SC 29706",
       phone: "(803) 209-6110",
       mapLink:
