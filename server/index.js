@@ -1,8 +1,9 @@
 require('dotenv').config();
-const connectDB = require('./config/db');
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
-const reviewRoutes = require('./routes/reviewRoutes'); // Fixed path
+const connectDB = require('./config/db');
+const reviewRoutes = require('./routes/reviewRoutes');
 
 const app = express();
 
@@ -12,6 +13,14 @@ app.use(express.json());
 
 // Routes
 app.use('/api/reviews', reviewRoutes);
+
+// 🟡 Serve static React files
+app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+// 🟢 Catch-all route for React Router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 // Connect to DB and start server
 connectDB().then(() => {
