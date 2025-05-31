@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "../index.css";
 // Images
-import Bedroom2 from "../assets/Booking/Bedroom2.jpg";
+import Bedroom2 from "../assets/Booking/bedroom2.jpg";
 import room1 from "../assets/ec5.jpg";
 import Parking from "../assets/HomePage/parking.jpg";
 import ec5 from "../assets/ec5.jpg";
