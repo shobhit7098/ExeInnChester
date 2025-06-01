@@ -31,7 +31,7 @@ const kit1 =
 const kit2 =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/Room3.jpg";
 const kit5 =
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/living7const";
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/living7.jpg";
 const kit3 =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/day-poolArea.jpg";
 const kit4 =

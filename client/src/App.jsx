@@ -5,12 +5,13 @@ import Amenities from "./pages/Amenities";
 import Attractions from "./pages/Attractions";
 import Restaurants from "./pages/Restaurants";
 import SearchPage from "./pages/SearchPage";
-// import Contact from "./pages/Contact";
+import ScrollToTop from "./pages/ScrollToTop";
 import Contact from "./pages/Contact";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/amenities" element={<Amenities />} />
