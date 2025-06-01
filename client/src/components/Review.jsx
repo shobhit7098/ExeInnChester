@@ -40,43 +40,43 @@ export default function ReviewSection() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [openMenuId, setOpenMenuId] = useState(null);
 
-  // const Url = "https://exeinnchester.onrender.com";
-  const Url = "http://localhost:5000";
+  const Url = "https://exeinnchester.onrender.com";
+  // const Url = "http://localhost:5000";
 
   const reviewVideos = [
     {
       id: 1,
-      title: "Guest Review 1",
+      title: "Honorable Owner",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review.mp4",
     },
     {
       id: 2,
-      title: "Guest Review 2",
+      title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review3.mp4",
     },
     {
       id: 3,
-      title: "Guest Review 3",
+      title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review1.mp4",
     },
     {
       id: 4,
-      title: "Guest Review 4",
+      title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review2.mp4",
     },
     {
       id: 5,
-      title: "Guest Review 5",
+      title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review4.mp4",
     },
     {
       id: 6,
-      title: "Guest Review 6",
+      title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review5.mp4",
     },
@@ -159,11 +159,11 @@ export default function ReviewSection() {
       <section className="bg-white py-12 px-6 max-w-7xl mx-auto rounded-3xl shadow-lg mb-10">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-bold text-blue-700 mb-9">
-            Guest Review Videos
+            Our Valuable Customers
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            See what our guests say about Executive Inn through these authentic
-            reviews.
+            See what our Customers say about Executive Inn through these
+            authentic and their valuable experience and reviews.
           </p>
         </div>
 

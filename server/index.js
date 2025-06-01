@@ -36,13 +36,6 @@ app.use(express.json());
 // Routes
 app.use('/api/reviews', reviewRoutes);
 
-// 🟡 Serve static React files
-app.use(express.static(path.join(__dirname, 'client/dist')));
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
-});
-
 // Connect to DB and start server
 connectDB().then(() => {
   const PORT = process.env.PORT || 5000;
