@@ -22,7 +22,7 @@ const facilityImages = [
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec13.jpg",
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec14.jpg",
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec15.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec16.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec17.jpg",
 ];
 const images = [
   {
