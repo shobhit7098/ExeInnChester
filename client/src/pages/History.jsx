@@ -25,76 +25,73 @@ export default function () {
             <div className="flex-shrink-0 mb-8 md:mb-0">
               <img
                 src="https://storage.googleapis.com/a1aa/image/6c935c1f-1a8b-47a3-b15f-13b4a9d5b732.jpg"
-                alt="Woman in hotel"
+                alt="Woman in Motel"
                 className="w-[300px] h-[350px] object-cover"
                 width={300}
                 height={350}
               />
             </div>
             {/* Copy */}
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-18 gap-y-9 text-[17px] leading-[20px] text-gray-700">
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-x-18 gap-y-9 text-[17px] leading-[20px] mb-2 text-gray-700">
               <h1 className="col-span-full text-[28px] leading-[28px] text-[1a1a3d] flex items-center font-semibold">
                 <span className="inline-block w-0.5 h-8 bg-[bfa15a] mr-3" />
                 Executive Inn Chester, SC
               </h1>
 
               <div>
-                <p className="font-medium mb-3">Clean and tidy</p>
+                <p className="font-medium mb-3">Immaculate Cleanliness</p>
                 <p className="mb-4">
-                  This is the most vital characteristic that any hotel should
-                  possess. All the rooms in our hotel are clean. This includes
-                  the public rooms, the washrooms, restaurant, and the
-                  staircases. We make sure that we have adequate staff to
-                  maintain the hygiene level of the hotel. Our hotel’s furniture
-                  is also arranged in a neat and orderly manner.
+                  At Executive Inn Chester, cleanliness is key to a memorable
+                  stay. Our rooms, along with common areas, washrooms,
+                  restaurant, and staircases, are meticulously maintained by our
+                  dedicated housekeeping team to ensure the highest standards of
+                  hygiene and comfort.
                 </p>
 
-                <p className="font-medium mb-4">The staff</p>
+                <p className="font-semibold mb-4">
+                  Exceptional Service from Our Friendly Staff
+                </p>
                 <p className="mb-3">
-                  The staff are the face of a hotel because the moment a guest
-                  checks in to the time they check out, they are in contact with
-                  the staff. They are the ones who will determine the guest’s
-                  experience at the hotel. Our staff is:
+                  At Executive Inn Chester, our staff is the heart of your
+                  experience. From check-in to checkout, we provide warm,
+                  professional service to ensure your stay is seamless and
+                  enjoyable.
                 </p>
                 <ul className="list-disc list-inside space-y-3">
                   <li>
-                    Warm and kind; the hotel industry is all about providing
-                    services, you cannot offer a service with a bad attitude.
-                    Our staff is courteous and makes the guests feel at home.
+                    We believe exceptional service starts with a positive
+                    attitude. Our team is dedicated to making you feel at home
+                    with a friendly and genuine approach throughout your stay.
                   </li>
                   <li>
-                    Offers information where necessary. Our staff offer
-                    information gladly to guests. The information may
+                    Whether you're exploring local attractions or need guidance,
+                    our staff is eager to share helpful insights, ensuring you
+                    make the most of your visit.
                   </li>
                 </ul>
               </div>
-
               <div>
-                <p className="mb-2">
-                  be about the hotel’s surrounding or any location that the
-                  guest might want to know in the area. On top of that, the
-                  staff is well knowledgeable.
+                <p className="font-semibold mb-3">
+                  Prime Location for Convenience and Safety
                 </p>
-
-                <p className="font-medium mb-3">Location</p>
                 <p className="mb-4">
-                  Executive Inn Chester is conveniently located. It allows you
-                  to perform your errands without having to waste too much time,
-                  effort or money. It is also located in a safe place.
+                  Executive Inn Chester’s central location offers easy access
+                  for both business and leisure, saving you time and ensuring a
+                  secure, well-connected stay.
                 </p>
 
-                <p className="font-medium mb-3">Customers’ needs first</p>
+                <p className="font-medium mb-3">Customer-Centric Service</p>
                 <p className="mb-4">
-                  We are all about people and service provision. We put our
-                  customer’s needs first, always have a good reputation. We
-                  provide personalized services to our guests and that is why
-                  they come back over and over again because they cannot forget
-                  the experience they had at our hotel. Our staff ensures that
-                  the guest’s needs come first.
+                  Your satisfaction is our priority. At Executive Inn Chester,
+                  we provide personalized service to make every guest feel
+                  valued, ensuring many return time after time.
                 </p>
 
-                <p className="font-medium mb-3">Free Wi-Fi & HBO</p>
-                <p>We provide free Wi-Fi and HBO to all our guests.</p>
+                <p className="font-medium mb-3">Complimentary Wi-Fi & HBO</p>
+                <p>
+                  Stay connected with free high-speed Wi-Fi and HBO, perfect for
+                  both work and relaxation.
+                </p>
               </div>
             </div>
           </div>

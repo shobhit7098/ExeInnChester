@@ -1,28 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
+import { GiSpeakerOff } from "react-icons/gi";
+import { HiMiniSpeakerWave } from "react-icons/hi2";
 
 const facilityImages = [
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec1.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec2.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec3.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec4.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec5.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec6.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec7.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec8.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec9.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec10.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec11.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec12.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec13.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec14.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec15.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec17.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-day.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/lone2.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parking3.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-2.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/frontZoom.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Door.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone2.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone3.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Entry.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking1.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking2.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking3.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parkingsit2.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parkingsit.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/NPpool (2).jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/NCpool.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/night-poolArea.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/day-poolArea.jpg",
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/pool.jpg",
 ];
 const images = [
   {
@@ -42,38 +48,65 @@ const images = [
 const HeroSlider = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+  const videoRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const [showVideo, setShowVideo] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setShowVideo(true), 50); // Increased loading time to 3 seconds
+    return () => clearTimeout(timeout);
+  }, []);
+
+  // Auto-play and mute video when it's loaded
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = isMuted;
+      video.play().catch((err) => {
+        console.warn("Autoplay blocked:", err);
+      });
+    }
+  }, [showVideo, isMuted]);
+
+  const handleMuteToggle = () => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = !isMuted; // Toggle mute
+      setIsMuted(!isMuted); // Update the state to reflect current mute status
+    }
+  };
 
   return (
     <main className="relative pt-20 min-h-screen bg-white">
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-white/20 backdrop-blur-sm z-[40] pointer-events-none transition-all duration-300"
-          aria-hidden="true"
-        />
-      )}
       <header className="relative w-full z-[10]">
         <div className="relative w-full overflow-visible group">
-          {/* <div className="absolute inset-0 bg-gray-400 opacity-30 z-0" /> */}
-          <video
-            src="https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Vid1.mp4" // Replace with your video path
-            autoPlay
-            loop
-            muted={false}
-            className="w-full object-cover max-h-[600px]"
-            width={800}
-            height={600}
-            playsInline
-          >
-            Your browser does not support the video tag.
-          </video>
+          {showVideo && (
+            <video
+              ref={videoRef}
+              src="https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Vid3.mp4"
+              autoPlay
+              loop
+              muted={isMuted} // Controlled by state
+              playsInline
+              className="w-full object-cover max-h-[600px]"
+              width={800}
+              height={600}
+            >
+              Your browser does not support the video tag.
+            </video>
+          )}
 
-          {/* Triangle Bottom Cut */}
+          {/* Mute/Unmute Button */}
+          <button
+            onClick={handleMuteToggle}
+            className="absolute bottom-5 left-5 bg-black text-white px-4 py-2 rounded"
+          >
+            {isMuted ? <GiSpeakerOff /> : <HiMiniSpeakerWave />}
+          </button>
+
           <div
-            className="absolute bottom-0 left-0 w-full z-10 transition-all duration-300 ease-in-out"
-            style={{
-              height: "10px",
-              backgroundColor: "#007f66",
-            }}
+            className="absolute bottom-0 left-0 w-full z-10"
+            style={{ height: "10px", backgroundColor: "#007f66" }}
           />
         </div>
       </header>
@@ -118,16 +151,7 @@ const HeroSlider = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.7 }}
           >
-            {`Executive Inn, Chester, SC is an excellent choice
-for travelers visiting Chester and surrounding
-areas. They offer many helpful amenities
-designed to enhance your stay. Guest rooms
-offer many amenities. If you like Italian
-restaurants, Executive Hotel is conveniently
-located near Italian Garden II. Plus, during your
-trip, don’t forget to check out an art gallery, such
-as Arts Council. Enjoy your stay in Executive Inn
-Chester!`}
+            {`Whether you're visiting Chester or exploring the surrounding areas, Executive Inn offers a comfortable and convenient stay. Enjoy well-appointed guest rooms and thoughtful amenities such as Free Wi-Fi, Microwave, Free Parking and Pool are on season and other essentials designed to enhance your visit. Located just minutes from local attractions, including the popular Italian Garden II restaurant and the Arts Council gallery, Our Motel puts you in the heart of it all. We look forward to making your stay in Chester both relaxing and memorable`}
           </motion.p>
         </motion.article>
 

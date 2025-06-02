@@ -161,7 +161,7 @@ export default function Attractions() {
       </section>
       <History></History>
       {/* Services Section */}
-      <section className="flex justify-center items-center py-24 px-4 bg-white">
+      <section className="flex justify-center items-center py-12 px-4 bg-white">
         <div className="relative w-full max-w-5xl text-white text-center rounded-md shadow-xl overflow-hidden">
           <div className="absolute inset-0 bg-[#acafb3] blur-[50px] opacity-80 z-0" />
           <div className="relative bg-[#141340]/90 backdrop-blur-md px-6 py-16 md:px-10 md:py-20 lg:px-16 lg:py-24 z-10 rounded-md">

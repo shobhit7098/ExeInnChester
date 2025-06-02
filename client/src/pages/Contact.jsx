@@ -136,7 +136,7 @@ const Contact = () => {
         </div>
 
         {/* Google Map Embed */}
-        <div className="w-full h-[400px]">
+        <div className="w-full h-[200px]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.5378086517956!2d-81.1942169!3d34.696512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885642c1f6c0f151%3A0x7e6af43173f49649!2sExecutive%20Inn%20Chester!5e0!3m2!1sen!2sus!4v1689999999999!5m2!1sen!2sus"
             width="100%"

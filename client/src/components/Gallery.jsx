@@ -9,16 +9,19 @@ const Bedroom2 =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/bedroom2.jpg";
 const room1 = "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec5.jpg";
 const Parking =
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/parking.jpg";
-const ec5 = "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec5.jpg";
-const ec6 = "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec6.jpg";
-const ec7 = "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/ec7.jpg";
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parking.jpg";
+const ec5 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/MNview.jpg";
+const ec6 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parking3.jpg";
+const ec7 =
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/CarPack.jpg";
 const Front =
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-day.jpg";
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Pcar.jpg";
 const Parking2 =
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/parking2.jpg";
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nside.jpg";
 
-const frontImages = [Front, ec5, Parking, ec6, Parking2, ec7];
+const frontImages = [Front, Parking, ec5, ec6, Parking2, ec7];
 
 const Gallery = () => {
   return (
@@ -136,14 +139,10 @@ const Gallery = () => {
                   (803) 581-2525
                 </a>
               </p>
-              <p className="flex items-center gap-4">
-                <FaFax className="text-gray-500" />
-                (315) 435-7733
-              </p>
             </address>
 
             {/* Map stays inside this text column */}
-            <div className="w-full h-[400px] pt-2">
+            <div className="w-full h-[300px] pt-2">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.5378086517956!2d-81.1942169!3d34.696512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885642c1f6c0f151%3A0x7e6af43173f49649!2sExecutive%20Inn%20Chester!5e0!3m2!1sen!2sus!4v1689999999999!5m2!1sen!2sus"
                 width="100%"
