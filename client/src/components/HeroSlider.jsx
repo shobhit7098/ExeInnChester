@@ -52,11 +52,6 @@ const HeroSlider = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [showVideo, setShowVideo] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => setShowVideo(true), 50); // Increased loading time to 3 seconds
-    return () => clearTimeout(timeout);
-  }, []);
-
   // Auto-play and mute video when it's loaded
   useEffect(() => {
     const video = videoRef.current;
