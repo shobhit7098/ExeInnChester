@@ -19,7 +19,7 @@ import "swiper/css/navigation";
 export default function AmenitiesPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ["All", "Bedroom", "Kitchen", "Bathroom", "Other"];
+  const categories = ["All", "Bedroom", "Bathroom", "Other"];
 
   const amenities = [
     {
@@ -53,46 +53,34 @@ export default function AmenitiesPage() {
       category: "Bedroom",
     },
     {
-      icon: "🛌",
-      title: "Extra Pillows & Blankets",
-      description: "Extra comfort with more pillows and blankets.",
-      category: "Bedroom",
-    },
-    {
       icon: "☕",
       title: "Coffee Maker",
       description: "Brew fresh coffee any time.",
-      category: "Kitchen",
+      category: "Other",
     },
     {
       icon: "🍽️",
       title: "Kitchen Table",
       description: "Dine comfortably at your own table.",
-      category: "Kitchen",
+      category: "Other",
     },
     {
       icon: "🧊",
       title: "Refrigerator",
       description: "Store food and drinks easily.",
-      category: "Kitchen",
+      category: "Other",
     },
     {
       icon: "🔌",
       title: "Microwave",
       description: "Heat your meals quickly.",
-      category: "Kitchen",
-    },
-    {
-      icon: "🔥",
-      title: "Oven",
-      description: "Cook your favorite dishes.",
-      category: "Kitchen",
+      category: "Other",
     },
     {
       icon: "🚿",
       title: "Hot Water",
       description: "Reliable hot water for kitchen and bath.",
-      category: "Kitchen",
+      category: "Other",
     },
     {
       icon: "🧼",
@@ -176,7 +164,7 @@ export default function AmenitiesPage() {
           We create memorable experiences
         </h2>
         <p className="mt-4 font-bold text-gray-600">
-          The best hotel in Chester, SC, offering old-world charm and comfort
+          The best Motel in Chester, SC, offering old-world charm and comfort
         </p>
 
         {/* Testimonial Card */}
@@ -210,14 +198,14 @@ export default function AmenitiesPage() {
       {/* Amenities Section */}
       <section className="bg-[#f0f4f8] py-4 px-4 min-h-screen  flex flex-col items-center justify-center">
         <div className="text-center mb-10">
-          <h4 className="uppercase text-lg tracking-widest text-gray-500">
+          <h4 className="uppercase text-lg font-bold tracking-widest text-gray-500">
             Welcome to
           </h4>
           <h2 className="text-5xl font-bold text-blue-700">
             Executive Inn, Chester, SC
           </h2>
-          <p className="text-gray-600 text-lg mt-2">
-            A place to experience and enjoy the life
+          <p className="text-gray-500  font-bold text-lg mt-2">
+            A place to experience and enjoy.
           </p>
         </div>
 
