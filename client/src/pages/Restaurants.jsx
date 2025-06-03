@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-const Image 
+const Image =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/HeroImage.jpg";
 const HongImage =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/HongKong.png";
