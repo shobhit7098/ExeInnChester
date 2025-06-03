@@ -50,12 +50,7 @@ const HeroSlider = () => {
   const [photoIndex, setPhotoIndex] = useState(0);
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [showVideo, setShowVideo] = useState(false);
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setShowVideo(true), 50); // Increased loading time to 3 seconds
-    return () => clearTimeout(timeout);
-  }, []);
+  // const [showVideo, setShowVideo] = useState(true);
 
   // Auto-play and mute video when it's loaded
   useEffect(() => {
@@ -66,13 +61,13 @@ const HeroSlider = () => {
         console.warn("Autoplay blocked:", err);
       });
     }
-  }, [showVideo, isMuted]);
+  }, [isMuted]);
 
   const handleMuteToggle = () => {
     const video = videoRef.current;
     if (video) {
-      video.muted = !isMuted; // Toggle mute
-      setIsMuted(!isMuted); // Update the state to reflect current mute status
+      video.muted = !isMuted;
+      setIsMuted(!isMuted);
     }
   };
 
@@ -80,21 +75,20 @@ const HeroSlider = () => {
     <main className="relative pt-20 min-h-screen bg-white">
       <header className="relative w-full z-[10]">
         <div className="relative w-full overflow-visible group">
-          {showVideo && (
-            <video
-              ref={videoRef}
-              src="https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Vid3.mp4"
-              autoPlay
-              loop
-              muted={isMuted} // Controlled by state
-              playsInline
-              className="w-full object-cover max-h-[600px]"
-              width={800}
-              height={600}
-            >
-              Your browser does not support the video tag.
-            </video>
-          )}
+          <video
+            ref={videoRef}
+            src="https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Vid3.mp4"
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            preload="auto"
+            className="w-full object-cover max-h-[600px]"
+            width={800}
+            height={600}
+          >
+            Your browser does not support the video tag.
+          </video>
 
           {/* Mute/Unmute Button */}
           <button
