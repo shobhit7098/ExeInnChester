@@ -9,39 +9,85 @@ import { GiSpeakerOff } from "react-icons/gi";
 import { HiMiniSpeakerWave } from "react-icons/hi2";
 
 const facilityImages = [
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-day.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/lone2.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parking3.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-2.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/frontZoom.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Door.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone2.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone3.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Entry.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking1.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking2.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking3.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parkingsit2.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parkingsit.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/NPpool (2).jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/NCpool.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/night-poolArea.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/day-poolArea.jpg",
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/pool.jpg",
-];
-const images = [
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-day.jpg",
+    alt: "Front view of Executive Inn during the day",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/lone2.jpg",
+    alt: "Facility exterior lone2 view",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parking3.jpg",
+    alt: "Parking area with vehicles at Executive Inn",
+  },
   {
     src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-2.jpg",
-    alt: "Close-up of striped pillows on a bed in a hotel room with soft natural light",
+    alt: "Front view of Executive Inn building",
   },
   {
-    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/front-copy.jpg",
-    alt: "Modern hotel room with a cozy ambiance and large windows",
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/frontZoom.jpg",
+    alt: "Close-up front exterior of Executive Inn",
   },
   {
-    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/night-poolArea.jpg",
-    alt: "Elegant bedroom with decorative cushions and natural light",
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone.jpg",
+    alt: "Facility building lone view",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Door.jpg",
+    alt: "Entrance door of Executive Inn",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone2.jpg",
+    alt: "Facility exterior lone2 second view",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone3.jpg",
+    alt: "Facility exterior lone3 third view",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Entry.jpg",
+    alt: "Entry pathway to Executive Inn",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking1.jpg",
+    alt: "Parking lot view 1 at Executive Inn",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking2.jpg",
+    alt: "Parking lot view 2 at Executive Inn",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nparking3.jpg",
+    alt: "Parking lot view 3 at Executive Inn",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parkingsit2.jpg",
+    alt: "Parking site view 2",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/parkingsit.jpg",
+    alt: "Parking site main view",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/NPpool (2).jpg",
+    alt: "Swimming pool area view",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/NCpool.jpg",
+    alt: "Swimming pool close-up",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/night-poolArea.jpg",
+    alt: "Night view of pool area",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/HomePage/day-poolArea.jpg",
+    alt: "Daytime view of pool area",
+  },
+  {
+    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/pool.jpg",
+    alt: "Swimming pool with lounge chairs",
   },
 ];
 
@@ -50,9 +96,7 @@ const HeroSlider = () => {
   const [photoIndex, setPhotoIndex] = useState(0);
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [showVideo, setShowVideo] = useState(false);
 
-  // Auto-play and mute video when it's loaded
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -61,42 +105,52 @@ const HeroSlider = () => {
         console.warn("Autoplay blocked:", err);
       });
     }
-  }, [showVideo, isMuted]);
+
+    // Cleanup: pause video on unmount
+    return () => {
+      if (video) video.pause();
+    };
+  }, [isMuted]);
 
   const handleMuteToggle = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.muted = !isMuted; // Toggle mute
-      setIsMuted(!isMuted); // Update the state to reflect current mute status
-    }
+    setIsMuted((prev) => !prev);
   };
 
   return (
-    <main className="relative pt-20 min-h-screen bg-white">
+    <main className="relative pt-20 min-h-screen bg-white" role="main">
       <header className="relative w-full z-[10]">
         <div className="relative w-full overflow-visible group">
-          {showVideo && (
-            <video
-              ref={videoRef}
-              src="https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Vid3.mp4"
-              autoPlay
-              loop
-              muted={isMuted} // Controlled by state
-              playsInline
-              className="w-full object-cover max-h-[600px]"
-              width={800}
-              height={600}
-            >
-              Your browser does not support the video tag.
-            </video>
-          )}
+          <video
+            ref={videoRef}
+            src="https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Vid3.mp4"
+            autoPlay
+            loop
+            muted={isMuted}
+            playsInline
+            preload="metadata" // preload only metadata, faster start
+            poster="https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Vid3-poster.jpg" // add poster for SEO & UX
+            className="w-full object-cover max-h-[600px] h-auto"
+            width={800}
+            height={600}
+            aria-label="Executive Inn promotional video"
+            tabIndex={-1}
+          >
+            Your browser does not support the video tag.
+          </video>
 
           {/* Mute/Unmute Button */}
           <button
             onClick={handleMuteToggle}
-            className="absolute bottom-5 left-5 bg-black text-white px-4 py-2 rounded"
+            className="absolute bottom-5 left-5 bg-black bg-opacity-60 text-white p-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600"
+            aria-pressed={!isMuted}
+            aria-label={isMuted ? "Unmute video" : "Mute video"}
+            title={isMuted ? "Unmute video" : "Mute video"}
           >
-            {isMuted ? <GiSpeakerOff /> : <HiMiniSpeakerWave />}
+            {isMuted ? (
+              <GiSpeakerOff size={24} />
+            ) : (
+              <HiMiniSpeakerWave size={24} />
+            )}
           </button>
 
           <div
@@ -104,24 +158,28 @@ const HeroSlider = () => {
             style={{ height: "10px", backgroundColor: "#007f66" }}
           />
         </div>
+        {/* SEO Text for Video */}
+        <p className="sr-only">
+          Promotional video showcasing Executive Inn facilities and
+          surroundings.
+        </p>
       </header>
+
       {/* Tagline */}
-      <section className="py-8 px-4 md:px-10">
+      <section className="py-8 px-4 md:px-10" aria-label="Promotional tagline">
         <div className="text-center">
           <h2 className="text-3xl font-bold" tabIndex={-1}>
             Extended Stay Available
           </h2>
         </div>
       </section>
+
       {/* Facility Section */}
-      */
       <section
-        /*  container */
-        className="relative z-10 mx-auto w-2/3 overflow-hidden
-          bg-[#f1f1f1] shadow-[0_0_70px_-20px_rgba(0,0,0,0.8)] flex flex-col lg:flex-row items-center px-6 sm:px-10 lg:px-16 py-10 lg:py-14 gap-8"
+        className="relative z-10 mx-auto w-full max-w-6xl overflow-hidden bg-[#f1f1f1] shadow-[0_0_70px_-20px_rgba(0,0,0,0.8)] flex flex-col lg:flex-row items-center px-6 sm:px-10 lg:px-16 py-10 lg:py-14 gap-8"
         aria-label="Facility images and description"
       >
-        {/* 2 text block */}
+        {/* Text Block */}
         <motion.article
           className="flex-1 max-w-2xl text-center lg:text-left"
           initial={{ opacity: 0, y: 40 }}
@@ -135,8 +193,6 @@ const HeroSlider = () => {
           >
             Our Facility
           </h3>
-
-          {/* <hr className="mx-auto lg:mx-0  w-20 bg-gray-300 border-t-2 mt-2 " /> */}
           <hr className="border-t-3 border-gray-200 w-20 mt-2 mx-auto" />
 
           <motion.p
@@ -146,16 +202,16 @@ const HeroSlider = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.7 }}
           >
-            {`Whether you're visiting Chester or exploring the surrounding areas, Executive Inn offers a comfortable and convenient stay. Enjoy well-appointed guest rooms and thoughtful amenities such as Free Wi-Fi, Microwave, Free Parking and Pool are on season and other essentials designed to enhance your visit. Located just minutes from local attractions, including the popular Italian Garden II restaurant and the Arts Council gallery, Our Motel puts you in the heart of it all. We look forward to making your stay in Chester both relaxing and memorable`}
+            {`Whether you're visiting Chester or exploring the surrounding areas, Executive Inn offers a comfortable and convenient stay. Enjoy well-appointed guest rooms and thoughtful amenities such as Free Wi-Fi, Microwave, Free Parking and Pool (seasonal) and other essentials designed to enhance your visit. Located just minutes from local attractions, including the popular Italian Garden II restaurant and the Arts Council gallery, our motel puts you in the heart of it all. We look forward to making your stay in Chester both relaxing and memorable.`}
           </motion.p>
         </motion.article>
 
-        {/* 3gallery */}
+        {/* Gallery */}
         <figure
           className="grid flex-1 max-w-2xl gap-[2px] sm:gap-1 md:gap-2 lg:gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4"
           aria-label="Facility gallery"
         >
-          {facilityImages.map((src, i) => {
+          {facilityImages.map(({ src, alt }, i) => {
             const selected = isOpen && photoIndex === i;
 
             return (
@@ -166,11 +222,10 @@ const HeroSlider = () => {
                   setPhotoIndex(i);
                   setIsOpen(true);
                 }}
-                aria-label={`Open facility image ${i + 1} in lightbox`}
+                aria-label={`Open facility image ${i + 1} in lightbox: ${alt}`}
                 aria-pressed={selected}
                 className="relative aspect-square overflow-hidden rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[#023b4f]"
               >
-                {/* dim thumbnail if it matches the lightbox image */}
                 {selected && (
                   <div
                     aria-hidden="true"
@@ -181,18 +236,23 @@ const HeroSlider = () => {
 
                 <img
                   src={src}
-                  alt={`Facility ${i + 1}`}
+                  alt={alt || `Facility ${i + 1}`}
                   loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover transition-transform duration-300 ease-out hover:scale-105"
+                  width={300}
+                  height={300}
+                  fetchpriority={selected ? "high" : "auto"}
                 />
               </button>
             );
           })}
         </figure>
       </section>
+
       {/* Quote Section */}
       <section
-        className="relative w-full h-[500px] mt-16  overflow-hidden shadow-xl"
+        className="relative w-full h-[500px] mt-16 overflow-hidden shadow-xl"
         aria-label="Customer quote"
       >
         <img
@@ -200,34 +260,37 @@ const HeroSlider = () => {
           alt="Hotel bedroom banner"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
+          decoding="async"
+          width={1920}
+          height={500}
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 z-0" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <blockquote className="text-white text-3xl font-medium text-center px-6 py-8  italic shadow-lg drop-shadow-md">
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <blockquote className="text-white text-3xl font-medium text-center italic shadow-lg drop-shadow-md max-w-3xl mx-auto">
             “Comfortable Rooms, Friendly Staff, Free WiFi and HBO”
           </blockquote>
         </div>
       </section>
+
       {/* Lightbox */}
       {isOpen && (
         <div
           className="fixed inset-0 z-[60] bg-transparent"
           aria-modal="true"
           role="dialog"
+          tabIndex={-1}
         >
           <Lightbox
             open={isOpen}
             close={() => setIsOpen(false)}
             index={photoIndex}
-            slides={facilityImages.map((src) => ({ src }))}
+            slides={facilityImages.map(({ src, alt }) => ({ src, alt }))}
             on={{ view: ({ index }) => setPhotoIndex(index) }}
             styles={{
               container: {
                 backgroundColor: "rgba(255, 255, 255, 0.2)",
                 backdropFilter: "blur(2px)",
               },
-              // Add custom styles here to set yellow bullet points and nav arrows
-              // Example: Override CSS variables or provide classNames
             }}
           />
         </div>

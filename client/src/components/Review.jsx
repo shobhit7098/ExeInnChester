@@ -37,8 +37,10 @@ export default function ReviewSection() {
   const [loading, setLoading] = useState(false);
   const videoRefs = useRef([]);
   const swiperRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [openMenuId, setOpenMenuId] = useState(null);
+  // const [isPlaying, setIsPlaying] = useState(false);
+  // const [openMenuId, setOpenMenuId] = useState(null);
+  const videoRef = useRef(null);
+  // const [isMuted, setIsMuted] = useState(true);
 
   const Url = "https://exeinnchester.onrender.com";
   // const Url = "http://localhost:5000";
@@ -46,36 +48,30 @@ export default function ReviewSection() {
   const reviewVideos = [
     {
       id: 1,
-      title: "Honorable Owner",
-      videoUrl:
-        "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review.mp4",
-    },
-    {
-      id: 2,
       title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review3.mp4",
     },
     {
-      id: 3,
+      id: 2,
       title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review1.mp4",
     },
     {
-      id: 4,
+      id: 3,
       title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review2.mp4",
     },
     {
-      id: 5,
+      id: 4,
       title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review4.mp4",
     },
     {
-      id: 6,
+      id: 5,
       title: "Happy Customer",
       videoUrl:
         "https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review5.mp4",
@@ -155,6 +151,33 @@ export default function ReviewSection() {
 
   return (
     <>
+      <section className="bg-white py-12 px-6 max-w-7xl mx-auto rounded-3xl shadow-lg mb-10">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl font-bold text-blue-700 mb-9">
+            Message From President
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Welcome to Executive Inn Chester — we're honored to have you. Your
+            comfort and satisfaction are our top priorities, and we’re here to
+            serve you with warmth and care."
+          </p>
+        </div>
+        <video
+          ref={videoRef}
+          src="https://executiveinn.s3.eu-north-1.amazonaws.com/HomeVideo/Review.mp4"
+          autoPlay
+          loop
+          controls
+          playsInline
+          preload="auto"
+          className="w-full px-8 object-cover max-h-[600px]"
+          width={800}
+          height={600}
+        >
+          Your browser does not support the video tag.
+        </video>
+      </section>
+
       {/* Video Review Carousel */}
       <section className="bg-white py-12 px-6 max-w-7xl mx-auto rounded-3xl shadow-lg mb-10">
         <div className="text-center mb-10">

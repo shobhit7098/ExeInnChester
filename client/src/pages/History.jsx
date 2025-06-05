@@ -42,10 +42,10 @@ export default function () {
                 <p className="font-medium mb-3">Immaculate Cleanliness</p>
                 <p className="mb-4">
                   At Executive Inn Chester, cleanliness is key to a memorable
-                  stay. Our rooms, along with common areas, washrooms,
-                  restaurant, and staircases, are meticulously maintained by our
-                  dedicated housekeeping team to ensure the highest standards of
-                  hygiene and comfort.
+                  stay. Our rooms, along with common areas, washrooms, and
+                  staircases, are meticulously maintained by our dedicated
+                  housekeeping team to ensure the highest standards of hygiene
+                  and comfort.
                 </p>
 
                 <p className="font-semibold mb-4">

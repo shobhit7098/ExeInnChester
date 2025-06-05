@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 const Image =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/HeroImage.jpg";
 const HongImage =
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Hong.jpg";
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/HongKong.png";
 const BantamImage =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Bantam.jpg";
 const FishImage =
@@ -25,7 +25,7 @@ const UmiImage =
 const GoldenImage =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/golden.webp";
 const Front =
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/McD.webp";
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/FrontPorch.webp";
 const PizzaImage =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/pizza.webp";
 // const SubImage =
@@ -41,7 +41,7 @@ const PizzaImage =
 const ArbyImage =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Arbys.webp";
 const HardeeImage =
-  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Hardee's.webp";
+  "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Que.webp";
 const BojangleImage =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Restaurant/Bojangle.webp";
 const Sabor =
@@ -125,17 +125,6 @@ export default function Restaurants() {
       rating: 4.1,
       reviews: 373,
     },
-    {
-      name: "The Twisted Chef",
-      image: TwistedImage,
-      address: "1631 J A Cochran Bypass #F, Chester, SC 29706",
-      phone: "(803) 581-1166#",
-      mapLink:
-        "https://www.google.com/search?rlz=1C1CHBF_enUS878US878&ei=1Sz0XcTRD8vU5gKK-Y6wBA&q=The+Twisted+Chef+chester+sc&oq=The+Twisted+Chef+chester+sc&gs_l=psy-ab.12..0j0i30j0i333.58873.58873..60544...0.0..0.83.164.2......0....2j1..gws-wiz.......0i67.f8lFa7mzG9E&ved=0ahUKEwiEkOSI8bPmAhVLqlkKHYq8A0YQ4dUDCAs",
-      rating: 4.5,
-      reviews: 68,
-    },
-
     {
       name: "Manhattan Lounge",
       image: ManhattanImage,

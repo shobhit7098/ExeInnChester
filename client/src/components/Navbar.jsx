@@ -32,7 +32,6 @@ const Navbar = () => {
               Chester, SC
             </span>
           </Link>
-
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-x-10 text-gray-800 text-base font-medium">
             <Link to="/amenities" className="hover:text-blue-700">
@@ -47,8 +46,13 @@ const Navbar = () => {
             <Link to="/contact" className="hover:text-blue-700">
               Contact Us
             </Link>
-
-            {/* BOOKING */}
+            <Link
+              to="/booking"
+              className="bg-[#b8913b] text-white font-medium tracking-widest px-6 py-3 hover:bg-[#a47f2c] transition duration-300"
+            >
+              BOOK A STAY
+            </Link>
+            {/* BOOKING
             <div className="relative">
               <button
                 onClick={() => {
@@ -91,8 +95,7 @@ const Navbar = () => {
             >
               {searchOpen ? <FiX /> : <FiSearch />}
             </button>
-          </div>
-
+          </div>{" "}
           {/* Mobile Buttons */}
           <div className="md:hidden flex items-center space-x-3 text-xl">
             <button
@@ -108,7 +111,6 @@ const Navbar = () => {
               {mobileMenuOpen ? <FiX /> : <FiMenu />}
             </button>
           </div>
-
           {/* Search Dropdown */}
           {searchOpen && (
             <div className="absolute right-0 top-full min-w-[260px] bg-white border border-gray-300 border-t-2 border-t-blue-500 shadow-lg rounded-b-md mr-18 z-40 mt-2">

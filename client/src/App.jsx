@@ -7,7 +7,7 @@ import Restaurants from "./pages/Restaurants";
 import SearchPage from "./pages/SearchPage";
 import ScrollToTop from "./pages/ScrollToTop";
 import Contact from "./pages/Contact";
-
+import Booking from "./pages/Booking";
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +19,7 @@ function App() {
         <Route path="/restaurants" element={<Restaurants />} />
         <Route path="/search-page" element={<SearchPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/booking" element={<Booking />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation, Controller } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -20,6 +20,24 @@ const lobby =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/CoffeeArea3.jpg";
 const Fotter =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/footer.jpg";
+const testimonials = [
+  {
+    quote: `“I really enjoyed my stay. The staff were amazing. If excellent accommodations is what you're looking for, choose this hotel.”`,
+    author: "Kaya Jennifer",
+  },
+  {
+    quote: `“A perfect getaway! The rooms were spotless and the view was breathtaking. Highly recommend!”`,
+    author: "Liam Carter",
+  },
+  {
+    quote: `“Exceptional service and luxurious rooms. Will definitely be back again!”`,
+    author: "Maya Patel",
+  },
+  {
+    quote: `“Exceptional service and luxurious rooms. Will definitely be back again!”`,
+    author: "James Patel",
+  },
+];
 
 const Contact = () => {
   const images = [
@@ -30,6 +48,8 @@ const Contact = () => {
     // Add more images as needed
   ];
   const [isFlipped, setIsFlipped] = useState(false);
+  const textSwiperRef = useRef(null);
+  const imageSwiperRef = useRef(null);
 
   return (
     <>
@@ -98,27 +118,45 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Testimonials and Slider */}
-        <div className="w-full flex flex-col md:flex-row items-stretch justify-center px-4 sm:px-6 md:px-12 lg:px-24 py-8 sm:py-12">
-          {/* Testimonial Block */}
-          <div className="bg-[#4a2600] text-white px-6 sm:px-10 lg:px-16 py-10 sm:py-16 w-full md:w-1/2 lg:w-[40%] text-center flex flex-col justify-center h-auto md:h-[300px] lg:h-[350px] xl:h-[400px]">
-            <p className="italic font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed">
-              “I really enjoyed my stay. The staff were amazing. If excellent
-              accommodations is what you're looking for, choose this hotel.”
-            </p>
-            <p className="mt-6 font-bold tracking-widest text-[#d2a87c] text-xs sm:text-sm md:text-base lg:text-lg uppercase">
-              Kaya Jennifer
-            </p>
-          </div>
-
-          {/* Swiper Image Slider */}
-          <div className="w-full md:w-1/2 lg:w-[45%] h-[200px] sm:h-[300px] md:h-[300px] lg:h-[350px] xl:h-[400px] overflow-hidden relative shadow-lg">
+        <div className="w-full flex flex-col md:flex-row items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 py-8 sm:py-12">
+          {/* Testimonial Slider */}
+          <div className="bg-[#4a2600] text-white w-full md:w-1/2 lg:w-[40%] text-center flex items-center justify-center h-[300px] lg:h-[350px] xl:h-[400px]">
             <Swiper
+              onSwiper={(swiper) => (textSwiperRef.current = swiper)}
+              controller={{ control: imageSwiperRef.current }}
               spaceBetween={0}
               slidesPerView={1}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
               loop
-              modules={[Autoplay]}
+              modules={[Autoplay, Controller]}
+              className="w-full h-full px-6  sm:px-10 lg:px-16"
+            >
+              {testimonials.map((item, idx) => (
+                <SwiperSlide
+                  key={idx}
+                  className="flex flex-col justify-center items-center py-23 h-full text-center"
+                >
+                  <p className="italic font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed">
+                    {item.quote}
+                  </p>
+                  <p className="mt-6 font-bold tracking-widest text-[#d2a87c] text-xs sm:text-sm md:text-base lg:text-lg uppercase">
+                    {item.author}
+                  </p>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          {/* Image Slider */}
+          <div className="w-full md:w-1/2 lg:w-[45%] h-[300px] lg:h-[350px] xl:h-[400px] overflow-hidden relative shadow-lg">
+            <Swiper
+              onSwiper={(swiper) => (imageSwiperRef.current = swiper)}
+              controller={{ control: textSwiperRef.current }}
+              spaceBetween={0}
+              slidesPerView={1}
+              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              loop
+              modules={[Autoplay, Controller]}
               className="w-full h-full"
             >
               {images.map((src, idx) => (
