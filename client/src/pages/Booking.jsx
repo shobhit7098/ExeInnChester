@@ -69,7 +69,7 @@ const roomData = [
     price: "$139/night",
     description:
       "Elegant suite featuring a king bed and private in-room Jacuzzi for relaxation. Ideal for romantic stays, with a seating area, TV, and upgraded bath amenities.",
-    rating: 4.5,
+    rating: 4.9,
     reviews: 145,
     images: [
       "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/RoomBook/jacuzzi1.jpg",
