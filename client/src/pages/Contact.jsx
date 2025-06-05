@@ -22,22 +22,23 @@ const Fotter =
   "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Booking/footer.jpg";
 const testimonials = [
   {
-    quote: `“I really enjoyed my stay. The staff were amazing. If excellent accommodations is what you're looking for, choose this hotel.”`,
+    quote: `“The room was spotless, and the staff was incredibly welcoming. It felt like a home away from home.”`,
     author: "Kaya Jennifer",
   },
   {
-    quote: `“A perfect getaway! The rooms were spotless and the view was breathtaking. Highly recommend!”`,
+    quote: `“Clean rooms, comfortable beds, and reliable Wi-Fi – everything you need for a perfect stopover.”`,
     author: "Liam Carter",
   },
   {
-    quote: `“Exceptional service and luxurious rooms. Will definitely be back again!”`,
+    quote: `“The Executive Inn exceeded our expectations. The pool area at night is a hidden gem.”`,
     author: "Maya Patel",
   },
   {
-    quote: `“Exceptional service and luxurious rooms. Will definitely be back again!”`,
-    author: "James Patel",
+    quote: `“Amazing hospitality and peaceful environment. I loved the coffee area in the lobby – so cozy!”`,
+    author: "James Wilson",
   },
 ];
+
 
 const Contact = () => {
   const images = [
