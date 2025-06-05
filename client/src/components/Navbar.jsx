@@ -4,7 +4,6 @@ import { FiSearch, FiX, FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
-  const [bookingDropdownOpen, setBookingDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [query, setQuery] = useState("");
 
@@ -32,70 +31,30 @@ const Navbar = () => {
               Chester, SC
             </span>
           </Link>
+
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-x-10 text-gray-800 text-base font-medium">
-            <Link to="/amenities" className="hover:text-blue-700">
-              Amenities
-            </Link>
-            <Link to="/attractions" className="hover:text-blue-700">
-              Attractions
-            </Link>
-            <Link to="/restaurants" className="hover:text-blue-700">
-              Restaurants
-            </Link>
-            <Link to="/contact" className="hover:text-blue-700">
-              Contact Us
-            </Link>
+            <Link to="/amenities" className="hover:text-blue-700">Amenities</Link>
+            <Link to="/attractions" className="hover:text-blue-700">Attractions</Link>
+            <Link to="/restaurants" className="hover:text-blue-700">Restaurants</Link>
+            <Link to="/contact" className="hover:text-blue-700">Contact Us</Link>
             <Link
               to="/booking"
               className="bg-[#b8913b] text-white font-medium tracking-widest px-6 py-3 hover:bg-[#a47f2c] transition duration-300"
             >
               BOOK A STAY
             </Link>
-            {/* BOOKING
-            <div className="relative">
-              <button
-                onClick={() => {
-                  setBookingDropdownOpen(!bookingDropdownOpen);
-                  setSearchOpen(false);
-                }}
-                className="bg-[#b8913b] text-white font-medium tracking-widest px-6 py-3 hover:bg-[#a47f2c] transition duration-300"
-              >
-                BOOK A STAY
-              </button>
-              {bookingDropdownOpen && (
-                <div className="absolute right-0 top-full min-w-[260px] bg-white border border-gray-300 border-t-2 border-t-blue-500 shadow-lg rounded-b-md z-40 mt-4">
-                  <a
-                    href="https://www.booking.com/hotel/us/executive-inn-chester.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Booking.com
-                  </a>
-                  <a
-                    href="https://www.expedia.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Expedia.com
-                  </a>
-                </div>
-              )}
-            </div>
 
-            {/* Search */}
             <button
               onClick={() => {
                 setSearchOpen(!searchOpen);
-                setBookingDropdownOpen(false);
               }}
               className="text-xl hover:text-blue-500 relative z-20"
             >
               {searchOpen ? <FiX /> : <FiSearch />}
             </button>
-          </div>{" "}
+          </div>
+
           {/* Mobile Buttons */}
           <div className="md:hidden flex items-center space-x-3 text-xl">
             <button
@@ -111,6 +70,7 @@ const Navbar = () => {
               {mobileMenuOpen ? <FiX /> : <FiMenu />}
             </button>
           </div>
+
           {/* Search Dropdown */}
           {searchOpen && (
             <div className="absolute right-0 top-full min-w-[260px] bg-white border border-gray-300 border-t-2 border-t-blue-500 shadow-lg rounded-b-md mr-18 z-40 mt-2">
@@ -152,37 +112,15 @@ const Navbar = () => {
                 </Link>
               )
             )}
-            <div className="relative">
-              <button
-                onClick={() => {
-                  setBookingDropdownOpen(!bookingDropdownOpen);
-                  setSearchOpen(false);
-                }}
-                className="w-full bg-[#b8913b] text-white font-medium tracking-widest px-6 py-3 hover:bg-[#a47f2c] transition duration-300"
-              >
-                BOOK A STAY
-              </button>
-              {bookingDropdownOpen && (
-                <div className="mt-2 w-full bg-white border border-gray-300 border-t-2 border-t-blue-500 shadow-md rounded-b-md z-30">
-                  <a
-                    href="https://www.booking.com/hotel/us/executive-inn-chester.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Booking.com
-                  </a>
-                  <a
-                    href="https://www.expedia.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Expedia.com
-                  </a>
-                </div>
-              )}
-            </div>
+
+            {/* FIXED BOOKING LINK FOR MOBILE */}
+            <Link
+              to="/booking"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-center w-full bg-[#b8913b] text-white font-medium tracking-widest px-6 py-3 hover:bg-[#a47f2c] transition duration-300"
+            >
+              BOOK A STAY
+            </Link>
           </div>
         )}
       </header>
