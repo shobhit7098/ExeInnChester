@@ -7,7 +7,7 @@ const VisitUs = () => {
     <footer>
       {/* Mobile Footer (Call Button) - Only visible below md */}
       <div className="md:hidden fixed bottom-0 left-0 w-full bg-green-600 text-white py-4 text-center z-50">
-        <a href="tel:+1234567890" className="text-lg font-semibold">
+        <a href="tel: +1 (803) 581-2525" className="text-lg font-semibold">
           📞 Call Us Now
         </a>
       </div>
