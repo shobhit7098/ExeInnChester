@@ -184,7 +184,7 @@ export default function Rooms() {
                       href="tel:+18035812525"
                       className="text-blue-600 underline"
                     >
-                      +1(803) 581-252532
+                      +1(803) 581-2525
                     </a>
                   </p>
 
