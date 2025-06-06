@@ -8,13 +8,11 @@ import { Helmet } from "react-helmet";
 import "swiper/css";
 import "swiper/css/navigation";
 
-// Updated helper to use index for view number
+// Image description helper
 function getImageDescription(url, index) {
   if (!url) return "Room image";
-
   const filename = url.split("/").pop()?.split(".")[0] || "";
   const keyword = filename.replace(/\d+/g, "").toLowerCase();
-
   let readable = "";
   switch (keyword) {
     case "king":
@@ -29,17 +27,20 @@ function getImageDescription(url, index) {
     default:
       readable = "Room image";
   }
-
   return `${readable} - View ${index + 1}`;
 }
 
 const roomData = [
   {
     name: "Deluxe Room",
-    price: "$109/night",
+    pricing: {
+      base: "$95 + tax / night (2 guests included)",
+      additional: "$10 + tax per additional guest",
+      occupancy: "Max occupancy: Please inquire",
+    },
     description:
       "Spacious and modern room with a luxurious king-size bed and elegant decor. Includes a work desk, flat-screen TV, free Wi-Fi, and premium amenities.",
-    rating: 4.8,
+    rating: 4.9,
     reviews: 312,
     images: [
       "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/RoomBook/king1.jpg",
@@ -51,7 +52,11 @@ const roomData = [
   },
   {
     name: "Standard Room",
-    price: "$89/night",
+    pricing: {
+      base: "$105 + tax / night (2 guests included)",
+      additional: "$10 + tax per additional guest",
+      occupancy: "Max occupancy: 4 guests",
+    },
     description:
       "Comfortable room with a queen-size bed and essential amenities. Perfect for solo travelers or small families with TV, Wi-Fi, and A/C.",
     rating: 4.6,
@@ -66,10 +71,14 @@ const roomData = [
   },
   {
     name: "Executive Suite",
-    price: "$139/night",
+    pricing: {
+      base: "$130 + tax / night (2 guests included)",
+      additional: "No additional guests allowed",
+      occupancy: "Max occupancy: 2 guests",
+    },
     description:
       "Elegant suite featuring a king bed and private in-room Jacuzzi for relaxation. Ideal for romantic stays, with a seating area, TV, and upgraded bath amenities.",
-    rating: 4.9,
+    rating: 4.8,
     reviews: 145,
     images: [
       "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/RoomBook/jacuzzi1.jpg",
@@ -97,7 +106,7 @@ export default function Rooms() {
       <Navbar />
 
       <header
-        className="w-full h-[90vh] bg-cover bg-center flex items-center justify-center text-white text-4xl md:text-4xl font-bold text-center"
+        className="relative w-full h-[90vh] bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4"
         style={{
           backgroundImage:
             "url(https://executiveinn.s3.eu-north-1.amazonaws.com/assets/RoomBook/queen6.jpg)",
@@ -105,7 +114,19 @@ export default function Rooms() {
         role="banner"
         aria-label="Hero Section"
       >
-        Stay in Style: Elegant, Spacious & Fully Equipped Executive Suites
+        {/* Dark overlay for better text visibility */}
+        <div className="absolute inset-0 bg-black opacity-30 z-0"></div>
+
+        {/* Content above the overlay */}
+        <div className="relative z-10 max-w-4xl">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 drop-shadow-lg">
+            Stay in Style: Elegant, Spacious & Fully Equipped Executive Suites
+          </h1>
+          <p className="text-xl md:text-2xl font-medium bg-yellow-400 text-black px-4 py-2 rounded mt-2 shadow-md">
+            🎯 Special Commercial Rates Available – Contact Us for Exclusive
+            Discounts!
+          </p>
+        </div>
       </header>
 
       <main className="py-12 px-4 max-w-6xl mx-auto">
@@ -146,12 +167,29 @@ export default function Rooms() {
 
                 <div className="p-4">
                   <h2 className="text-xl font-semibold mb-2">{room.name}</h2>
+                  <div className="mb-3">
+                    <p className="text-blue-700 font-semibold">
+                      {room.pricing.base}
+                    </p>
+                    <p className="text-gray-600 text-sm">
+                      {room.pricing.additional}
+                    </p>
+                    <p className="text-gray-600 text-sm ">
+                      {room.pricing.occupancy}
+                    </p>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    For more enquiry, Please reach out to us at{" "}
+                    <a
+                      href="tel:+18035812525"
+                      className="text-blue-600 underline"
+                    >
+                      contact us
+                    </a>
+                  </p>
+
                   <p className="text-gray-700 mb-2">{room.description}</p>
-                  <p className="text-gray-700 mb-2">{room.price}</p>
-                  <div
-                    className="flex items-center mb-4"
-                    aria-label="Room rating"
-                  >
+                  <div className="flex items-center mb-4">
                     <Star className="w-5 h-5 text-yellow-500 mr-1" />
                     <span>
                       {room.rating} ({room.reviews} reviews)
@@ -160,7 +198,6 @@ export default function Rooms() {
                   <button
                     onClick={() => setSelectedRoom(room)}
                     className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-                    aria-label={`Book ${room.name}`}
                   >
                     Book Now
                   </button>
@@ -171,18 +208,13 @@ export default function Rooms() {
         </section>
       </main>
 
-      {/* Modal */}
+      {/* Booking Modal */}
       {selectedRoom && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
-          role="dialog"
-          aria-modal="true"
-        >
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md relative">
             <button
               onClick={() => setSelectedRoom(null)}
               className="absolute top-2 right-2 text-gray-600 hover:text-black opacity-30"
-              aria-label="Close booking modal"
             >
               <X className="w-6 h-6" />
             </button>
@@ -191,7 +223,7 @@ export default function Rooms() {
             </h3>
             <div className="space-y-4">
               <a
-                href="https://www.booking.com/hotel/us/executive-inn-chester.en-gb.html?label=gen173nr-1BCAEoggI46AdIM1gEaGyIAQGYAQm4ARfIAQzYAQHoAQGIAgGoAgO4Aq68hcIGwAIB0gIkMWY0YTU1ZDAtM2YyNy00MmI5LTk0Y2MtOWQxZmVhZjYwOGJj2AIF4AIB&sid=4630d3e20794c9a1c8eaeb5a91b2cc79&aid=304142&ucfs=1&arphpl=1&checkin=2025-07-08&checkout=2025-07-09"
+                href="https://www.booking.com/hotel/us/executive-inn-chester.en-gb.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
@@ -199,7 +231,7 @@ export default function Rooms() {
                 Booking.com
               </a>
               <a
-                href="https://www.expedia.com/Chester-Hotels-Executive-Inn-Chester.h100961773.Hotel-Information?chkin=2025-6-19&chkout=2025-6-20&rm1=a2&regionId=7209&searchId=83296654-01fc-4d35-b135-4d1104fa5e98"
+                href="https://www.expedia.com/Chester-Hotels-Executive-Inn-Chester.h100961773.Hotel-Information"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center bg-green-600 text-white py-2 rounded hover:bg-green-700"
