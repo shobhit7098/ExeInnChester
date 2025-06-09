@@ -30,14 +30,6 @@ const facilityImages = [
     alt: "Close-up front exterior of Executive Inn",
   },
   {
-    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone.jpg",
-    alt: "Facility building lone view",
-  },
-  {
-    src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Door.jpg",
-    alt: "Entrance door of Executive Inn",
-  },
-  {
     src: "https://executiveinn.s3.eu-north-1.amazonaws.com/assets/Facilities/Nlone2.jpg",
     alt: "Facility exterior lone2 second view",
   },
